@@ -74,5 +74,5 @@ cd ~/bitsquare
 mvn clean package -DskipTests
 
 # Instructions
-echo
+echo "Before running, use 'sudo raspi-config'->'Advanced'->'Memory Split' to split the GPU memory 50/50. Bitsquare needs more memory to run!
 echo "To Run: java -jar ~/bitsquare/gui/target/shaded.jar"
