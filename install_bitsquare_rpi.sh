@@ -32,6 +32,7 @@ echo "Installing JavaFX"
 # http://gluonhq.com/labs/javafxports/downloads/
 unzip -qq armv6hf-sdk.zip
 cd armv6hf-sdk
+sudo cp lib/jfxrt.jar /opt/jdk8/lib/
 sudo cp rt/lib/ext/jfxrt.jar /opt/jdk8/jre/lib/ext/
 sudo cp rt/lib/arm/* /opt/jdk8/jre/lib/arm/
 sudo cp rt/lib/javafx.platform.properties /opt/jdk8/jre/lib/
@@ -67,7 +68,9 @@ mvn clean install -DskipTests -Dmaven.javadoc.skip=true
 echo "Installing bitsquare"
 cd ~
 git clone https://github.com/bitsquare/bitsquare.git
-cd bitsquare
+cd "$(dirname "$0")"
+cp pom.xml ~/bitsquare/pom.xml
+cd ~/bitsquare
 mvn clean package -DskipTests
 
 # Instructions
