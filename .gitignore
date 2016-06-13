@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/
+JavaFXSrc_full.zip
+*~
+install_bitsquare_rpi (3rd copy).sh
+install_bitsquare_rpi (another copy).sh
+install_bitsquare_rpi (copy).sh
+rt/
+packages
+crosslibs
