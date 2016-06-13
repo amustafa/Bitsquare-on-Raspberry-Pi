@@ -12,13 +12,22 @@ echo
 SCRIPT_ROOT="$(dirname "$0")"
 ARCHITECTURE=`uname -a`
 
+if [ $# -eq 'update' ]
+  then
 
-# openjfx is available in the testing repo
+    echo "Updating Bitsquare"
+    cd bitsquare
+    git pull
+    mvn clean package -DskipTests
+
+else
+echo "Bitsquare Installation Process"
+
+
 echo 'deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi' | sudo tee -a /etc/apt/sources.list >/dev/null
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk openjfx maven tor -y
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf/
-
 
 cd "$(dirname "$0")"
 echo 'Enabling unlimited strength for cryptographic keys'
@@ -43,8 +52,6 @@ git clone -b FixBloomFilters https://github.com/bitsquare/bitcoinj.git
 cd bitcoinj
 mvn clean install -DskipTests -Dmaven.javadoc.skip=true
 
-
-
 echo "Installing bitsquare"
 cd ~
 git clone https://github.com/bitsquare/bitsquare.git
@@ -61,4 +68,4 @@ echo "Before running, use 'sudo raspi-config'->'Advanced'->'Memory Split' to spl
 echo "    the GPU needs more memory to run BitSquare!"
 
 echo -e 'Run this script again to update from github. Run this command to start Bitsquare:\n\t/usr/bin/java -jar ~/src/bitsquare/gui/target/shaded.jar'
-
+fi

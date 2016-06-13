@@ -9,3 +9,6 @@ install_bitsquare_rpi (copy).sh
 rt/
 packages
 crosslibs
+pom.xml
+update_bitsquare.sh
+armv6hf-sdk-8.60.7.zip
