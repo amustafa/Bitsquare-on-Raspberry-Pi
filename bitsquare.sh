@@ -27,7 +27,7 @@ echo "Bitsquare Installation Process"
 echo 'deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi' | sudo tee -a /etc/apt/sources.list >/dev/null
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk openjfx maven tor -y
-JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf/
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf
 
 cd "$(dirname "$0")"
 echo 'Enabling unlimited strength for cryptographic keys'
