@@ -12,7 +12,7 @@ echo
 SCRIPT_ROOT="$(dirname "$0")"
 ARCHITECTURE=`uname -a`
 
-if [ $# -eq 'update' ]
+if [ "$1" == "update" ]
   then
 
     echo "Updating Bitsquare"
