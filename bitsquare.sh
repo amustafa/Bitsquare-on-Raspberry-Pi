@@ -43,7 +43,7 @@ cd "$(dirname "$0")"
 echo "Setting Bouncy Castle Provider"
 wget https://www.bouncycastle.org/download/bcprov-ext-jdk15on-154.jar
 sudo mv bcprov-ext-jdk15on-154.jar $JAVA_HOME/jre/lib/ext/
-echo 'security.provider.11=org.bouncycastle.jce.provider.BouncyCastleProvider' | sudo tee -a  $JAVA_HOME/jre/lib/security/java.security
+echo 'security.provider.10=org.bouncycastle.jce.provider.BouncyCastleProvider' | sudo tee -a  $JAVA_HOME/jre/lib/security/java.security
 
 
 echo "Installing bitcoinj"
